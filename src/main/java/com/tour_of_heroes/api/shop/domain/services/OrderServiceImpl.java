@@ -44,11 +44,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void delete(Order item) throws InvalidDataException {
-
+        if (item == null) throw new InvalidDataException(InvalidDataException.CANT_BE_NULL);
+        dao.delete(item);
     }
 
     @Override
     public void deleteById(UUID id) {
-
+        dao.deleteById(id);
     }
 }

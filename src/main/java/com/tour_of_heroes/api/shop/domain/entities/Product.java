@@ -42,6 +42,12 @@ public class Product implements Serializable {
 
     }
 
+    public Product(String name, double price, String description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+
     public Product merge(Product target) {
         if (name != null && !name.equals(target.name)) target.name = name;
         if (price != null && !price.equals(target.price)) target.price = price;
