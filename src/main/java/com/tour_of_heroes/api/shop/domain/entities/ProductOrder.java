@@ -3,7 +3,6 @@ package com.tour_of_heroes.api.shop.domain.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 @Entity

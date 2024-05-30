@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 public class Product implements Serializable {
     @Getter
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "product_id", unique = true, nullable = false)
     private int id;
@@ -25,7 +25,7 @@ public class Product implements Serializable {
     private Double price;
 
     @Getter
-    @Column(name = "description", nullable = false)
+    @Column(name = "description")
     private String description;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)

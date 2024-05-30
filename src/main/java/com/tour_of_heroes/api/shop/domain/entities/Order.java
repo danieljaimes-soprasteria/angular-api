@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order implements Serializable {
     @Getter
     @Id

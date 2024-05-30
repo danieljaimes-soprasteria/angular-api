@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@RestController("/api/products")
+@RestController
+@RequestMapping("/api/shop/products")
 public class ProductController {
     @Autowired
     ProductService productService;
