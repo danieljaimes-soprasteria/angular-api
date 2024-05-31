@@ -9,11 +9,18 @@ import java.util.UUID;
 @Embeddable
 public class ProductOrderPK implements Serializable {
 
-    @Column(name = "product_id", insertable = false, updatable = false, unique = true, nullable = false)
+    @Column(name = "product_id", insertable = false, updatable = false, nullable = false)
     private int productId;
 
-    @Column(name = "order_id", insertable = false, updatable = false, unique = true, nullable = false)
+    @Column(name = "order_id", insertable = false, updatable = false, nullable = false)
     private UUID orderId;
 
 
+    public ProductOrderPK(UUID orderId, int productId) {
+        this.orderId = orderId;
+        this.productId = productId;
+    }
+
+    public ProductOrderPK() {
+    }
 }

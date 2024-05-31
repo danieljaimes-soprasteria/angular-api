@@ -41,4 +41,13 @@ public class Order implements Serializable {
         ProductOrder productOrder = new ProductOrder(this, product);
         productOrderList.add(productOrder);
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", expeditionDate=" + expeditionDate +
+                ", productOrderList=" + getProductOrderList().stream().map(Product::toString).toString() +
+                '}';
+    }
 }

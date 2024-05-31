@@ -20,5 +20,4 @@ public class InProductDTO {
     public static Product from(int id, InProductDTO target) {
         return new Product(id, target.name, target.price, target.description);
     }
-
 }

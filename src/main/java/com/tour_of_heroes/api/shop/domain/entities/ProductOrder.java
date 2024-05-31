@@ -25,6 +25,7 @@ public class ProductOrder implements Serializable {
     }
 
     public ProductOrder(Order order, Product product) {
+        this.id = new ProductOrderPK(order.getId(), product.getId());
         this.order = order;
         this.product = product;
     }

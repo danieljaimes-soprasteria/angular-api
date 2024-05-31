@@ -35,8 +35,10 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     @Transactional
     public OutOrderDTO createOrder(@Valid @RequestBody InOrderDTO inOrderDTO) throws InvalidDataException {
+        Order order = InOrderDTO.from(inOrderDTO);
+        System.out.println(order);
         return OutOrderDTO.from(
-                orderService.add(InOrderDTO.from(inOrderDTO))
+                orderService.add(order)
         );
     }
 
