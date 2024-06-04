@@ -1,15 +1,13 @@
 package com.tour_of_heroes.api.heroes.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 @Entity
 @Table(name = "heroes")
 public class Hero {
     @Getter
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "heroe_id")
     private Integer id;
@@ -20,6 +18,10 @@ public class Hero {
 
     public Hero(Integer id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public Hero(String name) {
         this.name = name;
     }
 
