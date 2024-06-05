@@ -7,7 +7,8 @@ import lombok.Getter;
 @Table(name = "heroes")
 public class Hero {
     @Getter
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="heroes_seq")
+    @SequenceGenerator(name="heroes_seq",sequenceName="HEROES_SEQ", allocationSize=1)
     @Id
     @Column(name = "heroe_id")
     private Integer id;

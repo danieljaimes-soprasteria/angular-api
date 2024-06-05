@@ -45,7 +45,7 @@ public class HeroController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @Transactional
-    public OutHeroDTO createHero(@Valid @RequestBody InHeroDTO source) throws InvalidDataException, NotFoundException {
+    public OutHeroDTO createHero(@Valid @RequestBody InHeroDTO source) throws InvalidDataException {
         Hero hero = heroService.add(InHeroDTO.from(source));
         return OutHeroDTO.from(hero);
     }
