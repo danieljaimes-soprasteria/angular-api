@@ -52,6 +52,7 @@ public class HeroController {
 
     @DeleteMapping("/{id}")
     @Transactional
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteHero(@PathVariable int id) throws NotFoundException {
         if (heroService.getOne(id).isEmpty()) throw new NotFoundException();
         heroService.deleteById(id);
