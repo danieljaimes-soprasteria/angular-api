@@ -47,14 +47,13 @@ public class ProductController {
     @PatchMapping("/{id}")
     @Transactional
     public OutProductDTO updateProduct(@PathVariable int id, @Valid @RequestBody InProductDTO inProductDTO) throws NotFoundException, BadRequestException, InvalidDataException {
-        if (productService.getOne(id).isEmpty()) throw new BadRequestException("Id not exist.");
-        return OutProductDTO.from(
-                productService.modify(InProductDTO.from(id, inProductDTO))
+        return OutProductDTO.from(productService.modify(InProductDTO.from(id, inProductDTO))
         );
     }
 
     @DeleteMapping("/{id}")
     @Transactional
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteProduct(@PathVariable int id) throws NotFoundException {
         if(productService.getOne(id).isEmpty()) throw new NotFoundException();
         productService.deleteById(id);
