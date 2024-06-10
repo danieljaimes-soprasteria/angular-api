@@ -3,6 +3,7 @@ package com.tour_of_heroes.api.shop.domain.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,14 +19,17 @@ public class Product implements Serializable {
     private int id;
 
     @Getter
+    @Setter
     @Column(name = "name", nullable = false)
     private String name;
 
     @Getter
+    @Setter
     @Column(name = "price", nullable = false)
     private Double price;
 
     @Getter
+    @Setter
     @Column(name = "description")
     private String description;
 
