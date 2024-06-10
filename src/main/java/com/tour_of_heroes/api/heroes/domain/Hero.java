@@ -2,6 +2,7 @@ package com.tour_of_heroes.api.heroes.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "heroes")
@@ -14,6 +15,7 @@ public class Hero {
     private Integer id;
 
     @Getter
+    @Setter
     @Column(name = "name")
     private String name;
 
