@@ -33,7 +33,7 @@ public class HeroServiceImpl implements HeroService {
     public Hero modify(Hero item) throws NotFoundException, InvalidDataException {
         if (item == null) throw new InvalidDataException(InvalidDataException.CANT_BE_NULL);
         Optional<Hero> order = dao.findById(item.getId());
-        if(order.isEmpty()) throw new NotFoundException();
+        if (order.isEmpty()) throw new NotFoundException();
         return dao.save(item.merge(order.get()));
     }
 

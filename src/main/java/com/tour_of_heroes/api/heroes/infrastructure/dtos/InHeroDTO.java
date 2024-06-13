@@ -11,10 +11,11 @@ import lombok.NoArgsConstructor;
 public class InHeroDTO {
     private String name;
 
-    public static Hero from(InHeroDTO source){
+    public static Hero from(InHeroDTO source) {
         return new Hero(source.name);
     }
-    public static Hero from(int id, InHeroDTO source){
+
+    public static Hero from(int id, InHeroDTO source) {
         return new Hero(id, source.name);
     }
 }

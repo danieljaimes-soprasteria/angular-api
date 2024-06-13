@@ -55,7 +55,7 @@ public class ProductController {
     @Transactional
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteProduct(@PathVariable int id) throws NotFoundException {
-        if(productService.getOne(id).isEmpty()) throw new NotFoundException();
+        if (productService.getOne(id).isEmpty()) throw new NotFoundException();
         productService.deleteById(id);
     }
 }

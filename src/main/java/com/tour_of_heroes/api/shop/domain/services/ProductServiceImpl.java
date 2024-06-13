@@ -37,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
     public Product modify(Product item) throws NotFoundException, InvalidDataException {
         if (item == null) throw new InvalidDataException(InvalidDataException.CANT_BE_NULL);
         Optional<Product> product = dao.findById(item.getId());
-        if(product.isEmpty()) throw new NotFoundException();
+        if (product.isEmpty()) throw new NotFoundException();
         return dao.save(item.merge(product.get()));
     }
 

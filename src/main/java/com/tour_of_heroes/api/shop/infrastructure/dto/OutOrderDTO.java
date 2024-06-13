@@ -23,7 +23,7 @@ public class OutOrderDTO {
     @JsonProperty("products")
     private List<Object> productList = new ArrayList<>();
 
-    public static OutOrderDTO from(Order source){
+    public static OutOrderDTO from(Order source) {
         return new OutOrderDTO(
                 source.getId(),
                 source.getExpeditionDate().toString(),

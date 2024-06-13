@@ -6,7 +6,7 @@ import com.tour_of_heroes.api.shared.exceptions.NotFoundException;
 import java.util.List;
 import java.util.Optional;
 
-public interface DomainService<E, K>{
+public interface DomainService<E, K> {
     List<E> getAll();
 
     Optional<E> getOne(K id);

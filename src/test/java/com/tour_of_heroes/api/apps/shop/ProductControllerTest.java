@@ -2,7 +2,6 @@ package com.tour_of_heroes.api.apps.shop;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tour_of_heroes.api.controllers.ProductController;
-import com.tour_of_heroes.api.heroes.domain.Hero;
 import com.tour_of_heroes.api.shop.domain.contracts.services.ProductService;
 import com.tour_of_heroes.api.shop.domain.entities.Product;
 import com.tour_of_heroes.api.shop.infrastructure.dto.InProductDTO;

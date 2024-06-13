@@ -4,7 +4,6 @@ import com.tour_of_heroes.api.shop.domain.contracts.repositories.OrderRepository
 import com.tour_of_heroes.api.shop.domain.contracts.repositories.ProductRepository;
 import com.tour_of_heroes.api.shop.domain.entities.Order;
 import com.tour_of_heroes.api.shop.domain.entities.Product;
-import com.tour_of_heroes.api.shop.domain.entities.ProductOrder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -29,10 +28,11 @@ public class OrderRepositoryTest {
     private Order order;
 
     @BeforeEach
-    public void setupTestData(){
+    public void setupTestData() {
         // Given : Setup object or precondition
         order = new Order();
     }
+
     @Test
     @DisplayName("test for save order operation")
     public void givenOrderObject_whenSave_thenReturnSaveOrder() {
@@ -80,7 +80,7 @@ public class OrderRepositoryTest {
     public void givenOrderObject_whenFindAllProductOrder_thenReturnProductList() {
 
         Product productOne = new Product("Product1", 150.0, "Product1 Description");
-        Product productTwo = new Product("Product2", 200.0,"Product2 Description");
+        Product productTwo = new Product("Product2", 200.0, "Product2 Description");
 
         productRepository.save(productOne);
         productRepository.save(productTwo);
